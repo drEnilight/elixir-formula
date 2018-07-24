@@ -17,3 +17,6 @@ Style/ClassAndModuleChildren:
   SupportedStyles:
     - nested
     - compact
+
+Security/Open:
+  Enabled: false
