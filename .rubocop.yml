@@ -1,0 +1,19 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - bin/*
+    - config/**/*
+    - db/**/*
+    - spec/**/*
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  SupportedStyles:
+    - nested
+    - compact
