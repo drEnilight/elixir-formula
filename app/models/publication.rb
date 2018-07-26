@@ -16,9 +16,7 @@ class Publication < ActiveRecord::Base
   end
 
   def telegram_publication_text
-    "#{publication_tags}\n
-     <b>#{title.capitalize}</b>\n
-     #{url}".squeeze(' ')
+    "#{publication_tags}\n<b>#{title.capitalize}</b>\n#{url}"
   end
 
   def telegram_bot
