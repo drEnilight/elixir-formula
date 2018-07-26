@@ -2,7 +2,6 @@
 
 class Publication < ActiveRecord::Base
   def language=(*)
-    value = DetectLanguage.simple_detect(title.split.take(2).join(' ')) || 'en'
-    super(value)
+    super(CLD.detect_language(title)[:name].titleize)
   end
 end
