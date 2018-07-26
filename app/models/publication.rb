@@ -3,10 +3,6 @@
 class Publication < ActiveRecord::Base
   after_create :send_publication, if: -> { language == 'English' }
 
-  def title=(value)
-    super(value.capitalize)
-  end
-
   private
 
   def publication_tags
@@ -21,7 +17,7 @@ class Publication < ActiveRecord::Base
 
   def telegram_publication_text
     "#{publication_tags}\n
-     <b>#{title}</b>\n
+     <b>#{title.capitalize}</b>\n
      #{url}".squeeze(' ')
   end
 
