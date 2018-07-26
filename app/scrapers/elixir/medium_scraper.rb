@@ -10,7 +10,7 @@ class Elixir::MediumScraper < BaseScraper
       title: article_title,
       url: article_url,
       tags: article_tags,
-      language: ''
+      language: CLD.detect_language(article_title)[:name].titleize
     }
   end
 

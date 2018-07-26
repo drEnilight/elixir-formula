@@ -21,7 +21,7 @@ class BaseScraper
   def export
     articles.each do |article|
       @article = article
-      Publication.create(attributes)
+      Publication.find_or_create_by(attributes)
     end
   end
 
