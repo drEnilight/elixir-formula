@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Publication < ActiveRecord::Base
-  # after_create :send_publication, if: -> { language == 'English' }
+  after_create :send_publication, if: -> { language == 'English' }
 
   private
 
