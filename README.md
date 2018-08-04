@@ -1,24 +1,14 @@
-# README
+# Elixir Formula
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Telegram channel for elixir developers and other people who interested in Elixir-lang. The project is a scraper which parse different resources for further publication in the telegram channel.
 
-Things you may want to cover:
+## Parcing resources
+  - [Medium](http://medium.com/)
 
-* Ruby version
+## Contributing
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
