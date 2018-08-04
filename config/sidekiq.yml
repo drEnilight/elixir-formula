@@ -14,7 +14,7 @@
 # http://www.mikeperham.com/2013/11/13/advanced-sidekiq-host-specific-queues/
 :queues:
   - medium
-  - default
+  - devto
 
 # you can override concurrency based on environment
 production:
