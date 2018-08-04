@@ -4,6 +4,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
 
 ## Parcing resources
   - [Medium](http://medium.com/)
+  - [DevTo](https://dev.to/)
 
 ## Contributing
 
