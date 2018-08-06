@@ -33,6 +33,10 @@ class Elixir::MediumScraper < BaseScraper
   end
 
   def article_url
-    article.children[1].at_css('a').attributes['href'].value.sub(/\?.*/, '')
+    if article_title.empty?
+      article.children[1]['href'].sub(/\?.*/, '')
+    else
+      article.children[1].at_css('a')['href'].sub(/\?.*/, '')
+    end
   end
 end
