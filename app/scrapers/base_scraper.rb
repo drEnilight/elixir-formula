@@ -14,8 +14,25 @@ class BaseScraper
     raise NotImplementedError
   end
 
-  def attributes(_obj)
+  def article_tags
     raise NotImplementedError
+  end
+
+  def article_title
+    raise NotImplementedError
+  end
+
+  def article_url
+    raise NotImplementedError
+  end
+
+  def attributes
+    {
+      title: article_title,
+      url: article_url,
+      tags: article_tags,
+      language: CLD.detect_language(article_title)[:name].titleize
+    }
   end
 
   def export

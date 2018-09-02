@@ -5,13 +5,16 @@ class Elixir::MediumScraper < BaseScraper
     page.css('div.postArticle--short')
   end
 
-  def attributes
-    {
-      title: article_title,
-      url: article_url,
-      tags: article_tags,
-      language: CLD.detect_language(article_title)[:name].titleize
-    }
+  def article_tags
+    article_page.at_css('ul.tags--postTags').children.map { |tag| tag.text.parameterize(separator: '_') }
+  end
+
+  def article_title
+    article.css('h3.graf--title').text
+  end
+
+  def article_url
+    article.children[1].at_css('a')['href'].sub(/\?.*/, '')
   end
 
   def resource
@@ -22,21 +25,5 @@ class Elixir::MediumScraper < BaseScraper
 
   def article_page
     Nokogiri::HTML(open(article_url))
-  end
-
-  def article_tags
-    article_page.at_css('ul.tags--postTags').children.map { |tag| tag.text.parameterize(separator: '_') }
-  end
-
-  def article_title
-    article.css('h3.graf--title').text
-  end
-
-  def article_url
-    if article_title.empty?
-      article.children[1]['href'].sub(/\?.*/, '')
-    else
-      article.children[1].at_css('a')['href'].sub(/\?.*/, '')
-    end
   end
 end
