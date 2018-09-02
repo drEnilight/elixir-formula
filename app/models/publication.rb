@@ -1,18 +1,16 @@
 # frozen_string_literal: true
 
 class Publication < ActiveRecord::Base
-  after_create :send_publication, if: -> { language == 'English' || title.present? }
+  def publish
+    telegram_bot.call('sendMessage', text: telegram_publication_text,
+                                     chat_id: ENV.fetch('TELEGRAM_CHAT_ID'),
+                                     parse_mode: 'HTML')
+  end
 
   private
 
   def publication_tags
     tags.map { |tag| tag.prepend('#') }.join(' ')
-  end
-
-  def send_publication
-    telegram_bot.call('sendMessage', text: telegram_publication_text,
-                                     chat_id: ENV.fetch('TELEGRAM_CHAT_ID'),
-                                     parse_mode: 'HTML')
   end
 
   def telegram_publication_text
