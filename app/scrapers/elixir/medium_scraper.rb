@@ -14,7 +14,7 @@ class Elixir::MediumScraper < BaseScraper
   end
 
   def article_url
-    article.children[1].at_css('a')['href'].sub(/\?.*/, '')
+    article.children[2].at_css('a')['href'].sub(/\?.*/, '')
   end
 
   def resource
