@@ -3,6 +3,7 @@
 class Elixir::DevToScraper < BaseScraper
   def attributes
     {
+      author_name: article_author,
       title: article_title,
       url: article_url,
       tags: article_tags,
@@ -12,6 +13,10 @@ class Elixir::DevToScraper < BaseScraper
 
   def articles
     page.css('div.single-article:not(.feed-cta)')
+  end
+
+  def article_author
+    article.css('h4').text.strip.split('・').first
   end
 
   def article_tags

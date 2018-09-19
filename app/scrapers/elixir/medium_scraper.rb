@@ -3,6 +3,7 @@
 class Elixir::MediumScraper < BaseScraper
   def attributes
     {
+      author_name: article_author,
       title: article_title,
       url: article_url,
       tags: article_tags,
@@ -14,8 +15,12 @@ class Elixir::MediumScraper < BaseScraper
     page.css('div.postArticle--short')
   end
 
+  def article_author
+    article.css('[data-action="show-user-card"]').text
+  end
+
   def article_tags
-    article_page.at_css('ul.tags--postTags').children.map { |tag| tag.text.parameterize(separator: '_') }
+    article_page.css('ul.tags--postTags').children.map { |tag| tag.text.parameterize(separator: '_') }
   end
 
   def article_title
