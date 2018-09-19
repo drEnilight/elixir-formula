@@ -1,6 +1,15 @@
 # frozen_string_literal: true
 
 class Elixir::MediumScraper < BaseScraper
+  def attributes
+    {
+      title: article_title,
+      url: article_url,
+      tags: article_tags,
+      language: CLD.detect_language(article_content)[:name].titleize
+    }
+  end
+
   def articles
     page.css('div.postArticle--short')
   end
@@ -25,5 +34,9 @@ class Elixir::MediumScraper < BaseScraper
 
   def article_page
     Nokogiri::HTML(open(article_url))
+  end
+
+  def article_content
+    article_page.at_css('.postArticle-content').text
   end
 end

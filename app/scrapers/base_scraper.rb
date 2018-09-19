@@ -10,6 +10,10 @@ class BaseScraper
     @article = nil
   end
 
+  def attributes
+    raise NotImplementedError
+  end
+
   def articles
     raise NotImplementedError
   end
@@ -24,15 +28,6 @@ class BaseScraper
 
   def article_url
     raise NotImplementedError
-  end
-
-  def attributes
-    {
-      title: article_title,
-      url: article_url,
-      tags: article_tags,
-      language: CLD.detect_language(article_title)[:name].titleize
-    }
   end
 
   def export
