@@ -33,7 +33,7 @@ class BaseScraper
   def export
     articles.each do |article|
       @article = article
-      Publication.find_or_create_by(attributes)
+      Publication.find_or_create(attributes)
     end
   end
 
