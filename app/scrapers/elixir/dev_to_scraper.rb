@@ -15,7 +15,7 @@ class Elixir::DevToScraper < BaseScraper
   end
 
   def article_tags
-    article.css('span.tag').map { |tag| tag.text.gsub('#', '') }
+    article.css('span.tag').map { |tag| tag.text.delete('#') }
   end
 
   def article_title
