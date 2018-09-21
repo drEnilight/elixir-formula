@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-class Elixir::PublishingPlatformsJob < ApplicationJob
-  queue_as :publishing_platforms
+module Elixir
+  class PublishingPlatformsJob < ApplicationJob
+    queue_as :publishing_platforms
 
-  def perform
-    [Elixir::MediumScraper, Elixir::DevToScraper].each do |parent|
-      parent.new.export
+    def perform
+      publishing_platforms_classes.each { |parent| parent.new.export }
     end
   end
 end
