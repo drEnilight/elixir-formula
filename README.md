@@ -6,6 +6,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
   - [Medium](http://medium.com/)
   - [DevTo](https://dev.to/)
   - [Dockyard](https://dockyard.com/)
+  - [Plataformatec](http://blog.plataformatec.com.br)
 
 ## Contributing
 
