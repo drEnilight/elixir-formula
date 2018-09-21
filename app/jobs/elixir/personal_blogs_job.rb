@@ -4,6 +4,8 @@ class Elixir::PersonalBlogsJob < ApplicationJob
   queue_as :personal_blogs
 
   def perform
-    Elixir::DockyardScraper.new.export
+    [Elixir::DockyardScraper, Elixir::PlataformatecScraper].each do |parent|
+      parent.new.export
+    end
   end
 end
