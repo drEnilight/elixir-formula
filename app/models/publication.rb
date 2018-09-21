@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Publication < ActiveRecord::Base
-  after_create :send_publication, if: -> { language == 'English' && title.present? }
+  # after_create :send_publication, if: -> { language == 'English' && title.present? }
 
   def self.find_or_create(attributes)
     find_by(author_name: attributes[:author_name], title: attributes[:title]).nil? ? create(attributes) : return
