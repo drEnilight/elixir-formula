@@ -2,9 +2,10 @@
 
 Telegram channel for elixir developers and other people who interested in Elixir-lang. The project is a scraper which parse different resources for further publication in the telegram channel.
 
-## Parcing resources
+## Scraping resources
   - [Medium](http://medium.com/)
   - [DevTo](https://dev.to/)
+  - [Dockyard](https://dockyard.com/)
 
 ## Contributing
 
