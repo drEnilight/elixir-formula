@@ -4,7 +4,7 @@ class Publication < ActiveRecord::Base
   after_create :send_publication, if: -> { language == 'English' && title.present? }
 
   def self.find_or_create(attributes)
-    find_by(author_name: attributes[:author_name], title: attributes[:title]).nil? ? create(attributes) : return
+    find_by(author_name: attributes.dig(:author_name), title: attributes.dig(:title)).nil? && attributes.present? ? create(attributes) : return
   end
 
   private

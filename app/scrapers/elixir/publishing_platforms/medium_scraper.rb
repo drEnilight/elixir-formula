@@ -4,13 +4,7 @@ module Elixir
   module PublishingPlatforms
     class MediumScraper < BaseScraper
       def attributes
-        {
-          author_name: article_author,
-          title: article_title,
-          url: article_url,
-          tags: article_tags,
-          language: CLD.detect_language(article_content)[:name].titleize
-        }
+        article.children.count < 4 ? {} : prepared_attributes
       end
 
       def articles
@@ -45,6 +39,16 @@ module Elixir
 
       def article_content
         article_page.at_css('.postArticle-content').text
+      end
+
+      def prepared_attributes
+        {
+          author_name: article_author,
+          title: article_title,
+          url: article_url,
+          tags: article_tags,
+          language: CLD.detect_language(article_content)[:name].titleize
+        }
       end
     end
   end
