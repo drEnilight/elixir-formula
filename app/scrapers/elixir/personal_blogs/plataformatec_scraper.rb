@@ -9,7 +9,7 @@ module Elixir
           title: article_title,
           url: article_url,
           tags: article_tags,
-          language: 'English'
+          language: article_language
         }
       end
 
@@ -19,6 +19,10 @@ module Elixir
 
       def article_author
         article.css('p.post-author > a').text
+      end
+
+      def article_language
+        article.css('[rel="category tag"]').text
       end
 
       def article_tags
