@@ -3,7 +3,8 @@
 class ApplicationJob < ActiveJob::Base
   def personal_blogs_classes
     [Elixir::PersonalBlogs::DockyardScraper,
-     Elixir::PersonalBlogs::PlataformatecScraper]
+     Elixir::PersonalBlogs::PlataformatecScraper,
+     Elixir::PersonalBlogs::ThoughtbotScraper]
   end
 
   def publishing_platforms_classes
