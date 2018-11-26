@@ -8,6 +8,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
   - [Dockyard](https://dockyard.com/)
   - [Plataformatec](http://blog.plataformatec.com.br)
   - [Robots Thoughtbot](https://robots.thoughtbot.com/)
+  - [Carbon Five](https://blog.carbonfive.com/)
 
 ## Contributing
 
