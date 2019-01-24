@@ -34,7 +34,7 @@ module Elixir
       private
 
       def article_page
-        Nokogiri::HTML(open(article_url))
+        Nokogiri::HTML(open(article_url, ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE))
       end
 
       def article_content
