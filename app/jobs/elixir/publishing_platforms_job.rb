@@ -5,7 +5,7 @@ module Elixir
     queue_as :publishing_platforms
 
     def perform
-      publishing_platforms_classes.each { |parent| parent.new.export }
+      publishing_platforms_classes.each { |parent| parent.export }
     end
   end
 end

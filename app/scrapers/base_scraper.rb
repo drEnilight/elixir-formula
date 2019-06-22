@@ -5,6 +5,10 @@ require 'open-uri'
 class BaseScraper
   attr_reader :article, :page
 
+  def self.export(*args)
+    new(*args).export
+  end
+
   def initialize
     @page = Nokogiri::HTML(open(resource))
     @article = nil

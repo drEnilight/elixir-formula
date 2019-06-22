@@ -38,7 +38,13 @@ module Elixir
       end
 
       def article_content
-        article_page.at_css('.postArticle-content').text
+        loop do
+          page = article_page
+
+          if page.at_css('.postArticle-content').present?
+            break page.at_css('.postArticle-content').text
+          end
+        end
       end
 
       def prepared_attributes
