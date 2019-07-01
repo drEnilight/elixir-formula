@@ -37,23 +37,13 @@ module Elixir
         Nokogiri::HTML(open(article_url, ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE))
       end
 
-      def article_content
-        loop do
-          page = article_page
-
-          if page.at_css('.postArticle-content').present?
-            break page.at_css('.postArticle-content').text
-          end
-        end
-      end
-
       def prepared_attributes
         {
           author_name: article_author,
           title: article_title,
           url: article_url,
           tags: article_tags,
-          language: CLD.detect_language(article_content)[:name].titleize
+          language: CLD.detect_language(article_title)[:name].titleize
         }
       end
     end
