@@ -15,6 +15,8 @@ gem 'cld'
 gem 'sidekiq', '~> 5.1.3'
 gem 'telegram-bot-ruby', '~> 0.8.6'
 
+gem 'dynopoker'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
