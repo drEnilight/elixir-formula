@@ -12,3 +12,16 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 
 # Only keep the last 5 releases to save disk space
 set :keep_releases, 5
+
+namespace :deploy do
+  desc 'Update crontab with whenever'
+  task :update_cron do
+    on roles(:app) do
+      within current_path do
+        execute :bundle, :exec, "whenever --update-crontab #{fetch(:application)}"
+      end
+    end
+  end
+
+  after :finishing, 'deploy:update_cron'
+end
