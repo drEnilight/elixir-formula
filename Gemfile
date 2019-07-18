@@ -15,10 +15,6 @@ gem 'cld'
 gem 'sidekiq', '~> 5.1.3'
 gem 'telegram-bot-ruby', '~> 0.8.6'
 
-group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
-end
-
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'pry'
@@ -27,6 +23,18 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
 end
+
+group :development, :test do
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+end
+
+group :development, :production do
+  gem 'capistrano', '~> 3.11'
+  gem 'capistrano-rails', '~> 1.4'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+end
+
 
 group :production do
   gem 'rails_12factor'
