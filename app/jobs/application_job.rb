@@ -5,7 +5,8 @@ class ApplicationJob < ActiveJob::Base
     [Elixir::PersonalBlogs::DockyardScraper,
      Elixir::PersonalBlogs::PlataformatecScraper,
      Elixir::PersonalBlogs::ThoughtbotScraper,
-     Elixir::PersonalBlogs::CarbonfiveScraper]
+     Elixir::PersonalBlogs::CarbonfiveScraper,
+     Elixir::PersonalBlogs::ElixirLangScraper]
   end
 
   def publishing_platforms_classes

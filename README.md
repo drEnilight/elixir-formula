@@ -9,6 +9,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
   - [Plataformatec](http://blog.plataformatec.com.br)
   - [Robots Thoughtbot](https://robots.thoughtbot.com/)
   - [Carbon Five](https://blog.carbonfive.com/)
+  - [Elixir Lang](https://elixir-lang.org/)
 
 ## Contributing
 
