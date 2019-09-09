@@ -9,6 +9,10 @@ class Publication < ActiveRecord::Base
 
   private
 
+  def title
+    self[:title].gsub(/\"<>\"/, '')
+  end
+
   def publication_tags
     tags.map { |tag| tag.prepend('#') }.join(' ')
   end
