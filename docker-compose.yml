@@ -15,6 +15,7 @@ services:
       - .:/elixir_formula:cached
       - bundle:/usr/local/bundle
       - rails_cache:/app/tmp/cache
+      - ~/.ssh/id_rsa:/home/user/.ssh/id_rsa
     tmpfs:
       - /tmp
 
