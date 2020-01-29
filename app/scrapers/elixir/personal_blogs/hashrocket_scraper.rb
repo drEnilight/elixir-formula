@@ -33,6 +33,10 @@ module Elixir
         'https://til.hashrocket.com' + article.at_css('a.post__permalink')['href']
       end
 
+      def page_load_condition
+        browser.article(class: 'post').exists?
+      end
+
       def resource
         'https://til.hashrocket.com/elixir'
       end

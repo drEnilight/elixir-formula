@@ -33,6 +33,10 @@ module Elixir
         article.at_css('h1 > a')['href']
       end
 
+      def page_load_condition
+        browser.article(role: 'article').exists?
+      end
+
       def resource
         'https://blog.carbonfive.com/category/elixir/'
       end

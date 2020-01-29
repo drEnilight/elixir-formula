@@ -30,11 +30,15 @@ module Elixir
       end
 
       def article_url
-        'https://robots.thoughtbot.com' + article.at_css('a.mini-post-link')['href']
+        'https://thoughtbot.com' + article.at_css('a.mini-post-link')['href']
+      end
+
+      def page_load_condition
+        browser.main(id: 'main-content').exists?
       end
 
       def resource
-        'https://robots.thoughtbot.com/tags/elixir'
+        'https://thoughtbot.com/blog/tags/elixir'
       end
     end
   end
