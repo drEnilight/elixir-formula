@@ -16,7 +16,7 @@ module Elixir
       end
 
       def article_tags
-        article_page.css('ul.tags--postTags').children.map { |tag| tag.text.parameterize(separator: '_') }
+        %w[elixir]
       end
 
       def article_title
@@ -27,15 +27,15 @@ module Elixir
         article.children[2].at_css('a')['href'].sub(/\?.*/, '')
       end
 
+      def page_load_condition
+        browser.div(class: 'js-tagStream').exists?
+      end
+
       def resource
         'https://medium.com/tag/elixir/latest'
       end
 
       private
-
-      def article_page
-        Nokogiri::HTML(open(article_url, ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE))
-      end
 
       def prepared_attributes
         {

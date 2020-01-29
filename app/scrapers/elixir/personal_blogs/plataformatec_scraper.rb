@@ -37,6 +37,10 @@ module Elixir
         article.at_css('h1.post-title > a')['href']
       end
 
+      def page_load_condition
+        browser.section(class: 'post-section').exists?
+      end
+
       def resource
         'http://blog.plataformatec.com.br/tag/elixir/'
       end

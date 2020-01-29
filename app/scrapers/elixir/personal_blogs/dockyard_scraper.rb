@@ -14,23 +14,27 @@ module Elixir
       end
 
       def articles
-        page.css('article')
+        page.css('div.blog-post__content--latest, li.blog-post-sample')
       end
 
       def article_author
-        article.css('a.t-link').text
+        article_page.css('span.blog-post__meta-author').text
       end
 
       def article_tags
-        article_page.css('a.post__tags__tag').map { |tag| tag.text.parameterize(separator: '_') }
+        article_page.css('li.blog-category-list__item').map { |tag| tag.text.parameterize(separator: '_') }
       end
 
       def article_title
-        article.css('a.t-article-headline-link').text.strip
+        article_page.css('h1.blog-post__title').text.strip
       end
 
       def article_url
-        'https://dockyard.com' + article.at_css('a.t-article-headline-link')['href']
+        'https://dockyard.com' + article.at_css('a.blog-post__link--latest, a.blog-post__link')['href']
+      end
+
+      def page_load_condition
+        browser.div(class: 'blog-post__content--latest').exists?
       end
 
       def resource
@@ -40,7 +44,12 @@ module Elixir
       private
 
       def article_page
-        Nokogiri::HTML(open(article_url))
+        if browser.url != article_url
+          browser.goto(article_url)
+          browser.wait_until { |b| browser.div(class: 'blog-content-block').exists? }
+        end
+
+        @article_page = Nokogiri::HTML(browser.html)
       end
     end
   end

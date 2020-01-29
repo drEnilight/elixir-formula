@@ -33,6 +33,10 @@ module Elixir
         'https://elixir-lang.org' + article.at_css('h2.entry-title > a')['href']
       end
 
+      def page_load_condition
+        browser.div(class: %w[hentry post]).exists?
+      end
+
       def resource
         'https://elixir-lang.org/blog/'
       end

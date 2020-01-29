@@ -33,6 +33,10 @@ module Elixir
         'https://dev.to' + article.at_css('a.index-article-link')['href']
       end
 
+      def page_load_condition
+        browser.div(class: 'single-article').exists?
+      end
+
       def resource
         'https://dev.to/t/elixir/latest'
       end
