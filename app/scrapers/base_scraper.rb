@@ -41,6 +41,10 @@ class BaseScraper
     raise NotImplementedError
   end
 
+  def resource
+    raise NotImplementedError
+  end
+
   def export
     browser.goto(resource)
     browser.wait_until { |b| page_load_condition }
@@ -55,13 +59,9 @@ class BaseScraper
     browser.close
   end
 
-  def resource
-    raise NotImplementedError
-  end
-
   private
 
   def browser
-    @browser ||= Watir::Browser.new(:chrome, args: BROWSER_ARGS)
+    @browser ||= Watir::Browser.new(:chrome, { timeout: 120, args: BROWSER_ARGS })
   end
 end
