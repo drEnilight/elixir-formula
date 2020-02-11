@@ -4,7 +4,7 @@
 # pick it up automatically.
 ---
 :verbose: false
-:concurrency: 2
+:concurrency: 3
 
 # Set timeout to 8 on Heroku, longer if you manage your own systems.
 :timeout: 8
@@ -15,7 +15,8 @@
 :queues:
   - publishing_platforms
   - personal_blogs
+  - companies_blogs
 
 # you can override concurrency based on environment
 production:
-  :concurrency: 2
+  :concurrency: 3

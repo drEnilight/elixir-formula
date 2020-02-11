@@ -46,22 +46,26 @@ class BaseScraper
   end
 
   def export
-    browser.goto(resource)
-    browser.wait_until { |b| page_load_condition }
+    begin
+      browser.goto(resource)
+      browser.wait_until(timeout: 120) { |b| page_load_condition }
 
-    @page = Nokogiri::HTML(browser.html)
+      @page = Nokogiri::HTML(browser.html)
 
-    articles.each do |article|
-      @article = article
-      Publication.find_or_create(attributes)
+      articles.each do |article|
+        @article = article
+        Publication.find_or_create(attributes)
+      end
+
+      browser.close
+    rescue Exception
+      browser.close
     end
-
-    browser.close
   end
 
   private
 
   def browser
-    @browser ||= Watir::Browser.new(:chrome, { timeout: 120, args: BROWSER_ARGS })
+    @browser ||= Watir::Browser.new(:chrome, args: BROWSER_ARGS)
   end
 end

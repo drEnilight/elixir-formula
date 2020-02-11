@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Elixir
-  module PersonalBlogs
+  module CompaniesBlogs
     class PlataformatecScraper < BaseScraper
       def attributes
         {
