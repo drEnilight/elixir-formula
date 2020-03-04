@@ -8,7 +8,7 @@ ruby '2.4.2'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'dotenv-rails', '~> 2.2'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.12.2'
+gem 'puma', '~> 3.12.4'
 gem 'rails', '>= 5.2.2.1'
 gem 'whenever', require: false
 
