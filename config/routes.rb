@@ -8,5 +8,14 @@ Rails.application.routes.draw do
     end
 
     mount Sidekiq::Web, at: '/sidekiq'
+
+    resources :publications, only: %i[index] do
+      member do
+        post :publish
+        post :reject
+      end
+    end
+
+    root 'publications#index'
   end
 end

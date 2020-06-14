@@ -17,6 +17,11 @@
   - personal_blogs
   - companies_blogs
 
+:limits:
+  publishing_platforms: 1
+  personal_blogs: 1
+  companies_blogs: 1
+
 # you can override concurrency based on environment
 production:
   :concurrency: 3
