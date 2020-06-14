@@ -14,6 +14,7 @@ gem 'whenever', require: false
 
 gem 'cld'
 gem 'sidekiq', '~> 5.1.3'
+gem 'sidekiq-limit_fetch', '~> 3.4.0'
 gem 'telegram-bot-ruby', '~> 0.8.6'
 
 gem 'watir', '~> 6.16'
