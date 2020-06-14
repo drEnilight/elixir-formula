@@ -20,7 +20,7 @@ gem 'telegram-bot-ruby', '~> 0.8.6'
 gem 'watir', '~> 6.16'
 gem 'webdrivers', '~> 4.0'
 
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
