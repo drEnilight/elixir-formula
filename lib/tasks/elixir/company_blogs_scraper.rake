@@ -7,6 +7,6 @@ namespace :elixir do
       Elixir::CompaniesBlogs::CarbonfiveScraperJob,
       Elixir::CompaniesBlogs::DockyardScraperJob,
       Elixir::CompaniesBlogs::PlataformatecScraperJob
-    ].each { |parent| parent.perform_later }
+    ].each(&:perform_later)
   end
 end

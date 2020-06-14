@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="my-4">Publications list</h1>
+      <% @publications.each do |publication| %>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h2 class="card-title"><%= publication.title %></h2>
+            <%= link_to 'Publish', publish_publication_path(publication), method: :post, class: 'btn btn-success' %>
+            <%= link_to 'Reject', reject_publication_path(publication), method: :post, class: 'btn btn-danger' %>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on <%= publication.created_at&.to_formatted_s(:long_ordinal) %> by
+            <a href="#"><%= publication.author_name %></a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

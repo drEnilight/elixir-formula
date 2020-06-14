@@ -6,6 +6,6 @@ namespace :elixir do
     [
       Elixir::PublishingPlatforms::DevToScraperJob,
       Elixir::PublishingPlatforms::MediumScraperJob
-    ].each { |parent| parent.perform_later }
+    ].each(&:perform_later)
   end
 end

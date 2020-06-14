@@ -7,6 +7,6 @@ namespace :elixir do
       Elixir::PersonalBlogs::ElixirLangScraperJob,
       Elixir::PersonalBlogs::HashrocketScraperJob,
       Elixir::PersonalBlogs::ThoughtbotScraperJob
-    ].each { |parent| parent.perform_later }
+    ].each(&:perform_later)
   end
 end
