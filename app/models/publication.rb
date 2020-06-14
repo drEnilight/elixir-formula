@@ -8,6 +8,6 @@ class Publication < ActiveRecord::Base
   }
 
   def self.find_or_create(attributes)
-    find_by(author_name: attributes.dig(:author_name), title: attributes.dig(:title)).nil? && attributes.present? ? create(attributes) : return
+    create(attributes) if attributes.present? && !exists?(author_name: attributes.dig(:author_name), title: attributes.dig(:title))
   end
 end
