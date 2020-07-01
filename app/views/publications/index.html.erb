@@ -5,7 +5,9 @@
       <% @publications.each do |publication| %>
         <div class="card mb-4">
           <div class="card-body">
-            <h2 class="card-title"><%= publication.title %></h2>
+            <h1 class="card-title">
+              <%= link_to publication.title, publication.url %>
+            </h1>
             <%= link_to 'Publish', publish_publication_path(publication), method: :post, class: 'btn btn-success' %>
             <%= link_to 'Reject', reject_publication_path(publication), method: :post, class: 'btn btn-danger' %>
           </div>
