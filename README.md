@@ -11,6 +11,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
   - [Carbon Five](https://blog.carbonfive.com/)
   - [Elixir Lang](https://elixir-lang.org/)
   - [Today I Learned](https://til.hashrocket.com/)
+  - [Curiosum](https://curiosum.dev/)
 
 ## Contributing
 
