@@ -14,27 +14,27 @@ module Elixir
       end
 
       def articles
-        page.css('div.single-article:not(.feed-cta)')
+        page.css('div.crayons-story')
       end
 
       def article_author
-        article.css('h4').text.strip.split('・').first
+        article.css('p > a.crayons-story__secondary.fw-medium').text.strip
       end
 
       def article_tags
-        article.css('span.tag').map { |tag| tag.text.delete('#') }
+        article.css('a.crayons-tag').map { |tag| tag.text.delete('#') }
       end
 
       def article_title
-        article.css('h3 > text()').text.strip
+        article.css('h2.crayons-story__title').text.strip
       end
 
       def article_url
-        'https://dev.to' + article.at_css('a.index-article-link')['href']
+        'https://dev.to' + article.at_css('h2.crayons-story__title > a')['href']
       end
 
       def page_load_condition
-        browser.div(class: 'single-article').exists?
+        browser.div(class: 'articles-list').exists?
       end
 
       def resource
