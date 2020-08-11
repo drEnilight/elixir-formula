@@ -9,7 +9,8 @@ module Elixir
           title: article_title,
           url: article_url,
           tags: article_tags,
-          language: article_language
+          language: article_language,
+          source: 'plataformatec'
         }
       end
 

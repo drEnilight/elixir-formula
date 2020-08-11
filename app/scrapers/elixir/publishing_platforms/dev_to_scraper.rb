@@ -9,7 +9,8 @@ module Elixir
           title: article_title,
           url: article_url,
           tags: article_tags,
-          language: CLD.detect_language(article_title)[:name].titleize
+          language: CLD.detect_language(article_title)[:name].titleize,
+          source: 'dev.to'
         }
       end
 

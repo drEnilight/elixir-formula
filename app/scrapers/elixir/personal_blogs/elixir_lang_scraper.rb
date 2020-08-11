@@ -9,7 +9,8 @@ module Elixir
           title: article_title,
           url: article_url,
           tags: article_tags,
-          language: 'English'
+          language: 'English',
+          source: 'elixir-lang'
         }
       end
 
