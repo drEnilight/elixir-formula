@@ -12,6 +12,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
   - [Elixir Lang](https://elixir-lang.org/)
   - [Today I Learned](https://til.hashrocket.com/)
   - [Curiosum](https://curiosum.dev/)
+  - [ErlangSolutions](https://www.erlang-solutions.com/)
 
 ## Contributing
 

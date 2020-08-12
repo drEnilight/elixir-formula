@@ -7,6 +7,7 @@ namespace :elixir do
       Elixir::CompaniesBlogs::CarbonfiveScraperJob,
       Elixir::CompaniesBlogs::CuriosumScraperJob,
       Elixir::CompaniesBlogs::DockyardScraperJob,
+      Elixir::CompaniesBlogs::ErlangSolutionsScraperJob,
       Elixir::CompaniesBlogs::PlataformatecScraperJob
     ].each(&:perform_later)
   end

@@ -10,13 +10,14 @@ class Publication < ActiveRecord::Base
   enum source: {
     carbonfive: 'carbonfive',
     curiosum: 'curiosum',
-    dockyard: 'dockyard',
-    plataformatec: 'plataformatec',
-    elixirlang: 'elixirlang',
-    hashrocket: 'hashrocket',
-    thoughtbot: 'thoughtbot',
     devto: 'devto',
-    medium: 'medium'
+    dockyard: 'dockyard',
+    elixirlang: 'elixirlang',
+    erlangsolutions: 'erlangsolutions',
+    hashrocket: 'hashrocket',
+    medium: 'medium',
+    plataformatec: 'plataformatec',
+    thoughtbot: 'thoughtbot'
   }
 
   def self.find_or_create(attributes)
