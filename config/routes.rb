@@ -1,12 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  scope :monitoring do
-    Sidekiq::Web.use Rack::Auth::Basic do |username, password|
-      ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(username), ::Digest::SHA256.hexdigest(ENV["SIDEKIQ_AUTH_USERNAME"])) &
-        ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(password), ::Digest::SHA256.hexdigest(ENV["SIDEKIQ_AUTH_PASSWORD"]))
-    end
-
+  scope :monitoring, module: 'admin', constraints: AdminUserConstraint.new do
     mount Sidekiq::Web, at: '/sidekiq'
 
     resources :publications, only: %i[index] do
@@ -16,6 +11,12 @@ Rails.application.routes.draw do
       end
     end
 
-    root 'publications#index'
+    root 'publications#index', as: :admin_root
   end
+
+  root 'publications#index'
+
+  # session
+  get '/auth/:provider/callback', to: 'sessions#create'
+  delete '/signout', to: 'sessions#destroy'
 end

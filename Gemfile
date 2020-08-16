@@ -12,6 +12,8 @@ gem 'puma', '~> 3.12.2'
 gem 'rails', '>= 5.2.4.3'
 gem 'whenever', require: false
 
+gem 'omniauth-github', '~> 1.1', '>= 1.1.2'
+
 gem 'cld'
 gem 'sidekiq', '~> 5.1.3'
 gem 'sidekiq-limit_fetch', '~> 3.4.0'

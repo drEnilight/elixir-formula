@@ -20,7 +20,7 @@ class Publication < ActiveRecord::Base
     thoughtbot: 'thoughtbot'
   }
 
-  def self.find_or_create(attributes)
-    create(attributes) if attributes.present? && !exists?(author_name: attributes.dig(:author_name), title: attributes.dig(:title))
+  def self.find_or_create(attrs)
+    create(attrs) if attrs.present? && !exists?(author_name: attrs.dig(:author_name), title: attrs.dig(:title))
   end
 end
