@@ -4,6 +4,7 @@ namespace :elixir do
   desc 'Import new publications from companies blogs'
   task companies_blogs: :environment do
     [
+      Elixir::CompaniesBlogs::AppsignalScraperJob,
       Elixir::CompaniesBlogs::CarbonfiveScraperJob,
       Elixir::CompaniesBlogs::CuriosumScraperJob,
       Elixir::CompaniesBlogs::DockyardScraperJob,

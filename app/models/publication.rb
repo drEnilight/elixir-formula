@@ -8,6 +8,7 @@ class Publication < ActiveRecord::Base
   }
 
   enum source: {
+    appsignal: 'appsignal',
     carbonfive: 'carbonfive',
     curiosum: 'curiosum',
     devto: 'devto',
