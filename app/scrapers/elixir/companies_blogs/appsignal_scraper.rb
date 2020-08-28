@@ -27,7 +27,7 @@ module Elixir
       end
 
       def article_title
-        article.css('h1').text
+        article.css('h1').text.strip
       end
 
       def article_url
