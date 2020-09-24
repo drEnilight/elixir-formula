@@ -7,6 +7,7 @@ namespace :elixir do
       Elixir::CompaniesBlogs::AppsignalScraperJob,
       Elixir::CompaniesBlogs::CarbonfiveScraperJob,
       Elixir::CompaniesBlogs::CuriosumScraperJob,
+      Elixir::CompaniesBlogs::DashbitScraperJob,
       Elixir::CompaniesBlogs::DockyardScraperJob,
       Elixir::CompaniesBlogs::ErlangSolutionsScraperJob,
       Elixir::CompaniesBlogs::PlataformatecScraperJob

@@ -6,6 +6,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
   - [AppSignal](https://appsignal.com/)
   - [Carbon Five](https://www.carbonfive.com/)
   - [Curiosum](https://curiosum.dev/)
+  - [Dashbit](https://dashbit.co/)
   - [DevTo](https://dev.to/)
   - [Dockyard](https://dockyard.com/)
   - [Elixir Lang](https://elixir-lang.org/)

@@ -11,6 +11,7 @@ class Publication < ActiveRecord::Base
     appsignal: 'appsignal',
     carbonfive: 'carbonfive',
     curiosum: 'curiosum',
+    dashbit: 'dashbit',
     devto: 'devto',
     dockyard: 'dockyard',
     elixirlang: 'elixirlang',
