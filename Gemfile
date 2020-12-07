@@ -12,7 +12,7 @@ gem 'puma', '~> 3.12.2'
 gem 'rails', '>= 5.2.4.3'
 gem 'whenever', require: false
 
-gem 'omniauth-github', '~> 1.1', '>= 1.1.2'
+gem 'omniauth-github', '~> 1.4'
 
 gem 'cld'
 gem 'sidekiq', '~> 5.1.3'
