@@ -39,7 +39,7 @@ module Elixir
       end
 
       def resource
-        'https://dashbit.co/blog/tags/elixir'
+        'https://dashbit.co/blog'
       end
     end
   end
