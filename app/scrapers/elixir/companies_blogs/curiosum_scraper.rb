@@ -15,27 +15,27 @@ module Elixir
       end
 
       def articles
-        page.css('article.c-article')
+        page.css('article.blog-card')
       end
 
       def article_author
-        article.css('a.c-article__author').text
+        article.css('div.blog-card__author-name').text.strip
       end
 
       def article_tags
-        article.css('div.c-article__tags > a').map { |tag| tag.text.downcase }
+        %w[elixir]
       end
 
       def article_title
-        article.css('h2.c-article__title > a').text
+        article.css('h3.blog-card__title').text.strip
       end
 
       def article_url
-        'https://curiosum.dev' + article.at_css('h2.c-article__title > a')['href']
+        'https://curiosum.dev' + article.at_css('div.blog-card__content > a')['href']
       end
 
       def page_load_condition
-        browser.article(class: 'c-article').exists?
+        browser.section(class: ['container', 'blog__posts-view']).exists?
       end
 
       def resource
