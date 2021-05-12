@@ -15,11 +15,11 @@ module Elixir
       end
 
       def articles
-        page.css('div.articles').css('article')
+        page.css('div.grid-card.col-sm-6.col-lg-4')
       end
 
       def article_author
-        article.css('div.content > h5').text.split(/by/).last.strip
+        'erlangsolutions'
       end
 
       def article_tags
@@ -27,19 +27,19 @@ module Elixir
       end
 
       def article_title
-        article.css('div.content > h3').text.strip
+        article.css('div.grid-card__body > h3').text
       end
 
       def article_url
-        'https://www.erlang-solutions.com' + article.at_css('a.more')['href']
+        article.at_css('a.link-to-all')['href']
       end
 
       def page_load_condition
-        browser.section(class: 'blog-section').exists?
+        browser.div(class: ['row','grid-cards']).exists?
       end
 
       def resource
-        'https://www.erlang-solutions.com/blog.html'
+        'https://www.erlang-solutions.com/blog/'
       end
     end
   end
